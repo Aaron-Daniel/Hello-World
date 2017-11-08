@@ -19,7 +19,23 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    @IBAction func showMessage(sender: UIButton){
+        
+        var emojiDict: [String:String] = [
+            "🏀":"Basketball",
+            "🏈":"Football",
+            "⚽️":"Soccer",
+            "🎱":"Pool"
+        ]
+        
+        let selectedButton = sender
+        
+        if let emojiLookup = selectedButton.titleLabel?.text{
+            let alertController = UIAlertController(title: "Emoji Translater", message: emojiDict[emojiLookup], preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "OK", style:UIAlertActionStyle.default, handler: nil))
+            present(alertController, animated: true, completion: nil)
+        }
+    }
 }
 
