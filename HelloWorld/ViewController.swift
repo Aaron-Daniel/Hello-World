@@ -36,7 +36,6 @@ class ViewController: UIViewController {
             alertController.addAction(UIAlertAction(title: "OK", style:UIAlertActionStyle.default, handler: nil))
             present(alertController, animated: true, completion: nil)
         }
-        //TEST
     }
 }
 
