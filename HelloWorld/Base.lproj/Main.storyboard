@@ -19,32 +19,48 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mfv-cS-KMl">
-                                <rect key="frame" x="172.66666666666666" y="210" width="30" height="30"/>
+                                <rect key="frame" x="103" y="200" width="170" height="50"/>
                                 <color key="backgroundColor" red="1" green="0.20863377893157087" blue="0.25307200724693479" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="170" id="4oj-eR-dx2"/>
+                                    <constraint firstAttribute="height" constant="50" id="dIL-rc-Yr3"/>
+                                </constraints>
                                 <state key="normal" title="⚽️"/>
                                 <connections>
                                     <action selector="showMessageWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ef0-G4-CVB"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="irL-P7-xV4">
-                                <rect key="frame" x="172.66666666666666" y="447" width="30" height="30"/>
+                                <rect key="frame" x="103" y="440" width="170" height="50"/>
                                 <color key="backgroundColor" red="0.89397242668082189" green="1" blue="0.1294251301907452" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="LAQ-Cq-mER"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="170" id="U1C-9b-avx"/>
+                                </constraints>
                                 <state key="normal" title="🏀"/>
                                 <connections>
                                     <action selector="showMessageWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mRF-L2-adO"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gRK-r3-HVX">
-                                <rect key="frame" x="172.66666666666666" y="330" width="30" height="30"/>
+                                <rect key="frame" x="103" y="320" width="170" height="50"/>
                                 <color key="backgroundColor" red="0.033923220981551094" green="0.19527803890920215" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="03e-CR-WFx"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="170" id="EWC-63-5d4"/>
+                                </constraints>
                                 <state key="normal" title="🏈"/>
                                 <connections>
                                     <action selector="showMessageWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qn9-uY-QkX"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M11-CR-AWD">
-                                <rect key="frame" x="172.66666666666666" y="573" width="30" height="30"/>
+                                <rect key="frame" x="103" y="560" width="170" height="50"/>
                                 <color key="backgroundColor" red="0.17012492909322385" green="1" blue="0.15203114310132171" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Hbo-bM-tOG"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="170" id="mtG-ET-2H3"/>
+                                </constraints>
                                 <state key="normal" title="🎱"/>
                                 <connections>
                                     <action selector="showMessageWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dgr-vs-cfQ"/>
@@ -77,22 +93,22 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="irL-P7-xV4" firstAttribute="top" secondItem="gRK-r3-HVX" secondAttribute="bottom" constant="70" id="4WV-3k-Vrx"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1y6-eR-uhp" secondAttribute="trailing" constant="30" id="B6u-AW-R1r"/>
                             <constraint firstItem="M11-CR-AWD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="I8p-Jn-qeV"/>
-                            <constraint firstItem="M11-CR-AWD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="182" id="IPe-1u-Nru"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Zin-k5-xtF" secondAttribute="bottom" constant="13" id="KLf-m9-5ca"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="FwH-6o-5zJ" secondAttribute="trailing" constant="20" symbolic="YES" id="M9g-Zs-V6b"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Zin-k5-xtF" secondAttribute="trailing" constant="20" symbolic="YES" id="QzJ-dt-16D"/>
                             <constraint firstItem="FwH-6o-5zJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="UJK-XT-Ar0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1y6-eR-uhp" secondAttribute="bottom" constant="13" id="Ukq-fl-PjN"/>
+                            <constraint firstItem="gRK-r3-HVX" firstAttribute="top" secondItem="Mfv-cS-KMl" secondAttribute="bottom" constant="70" id="YAm-ew-NPM"/>
                             <constraint firstItem="Zin-k5-xtF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="be6-Td-RN2"/>
                             <constraint firstItem="irL-P7-xV4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="beO-BT-Z4S"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="FwH-6o-5zJ" secondAttribute="top" id="c2X-Bz-F9N"/>
                             <constraint firstItem="1y6-eR-uhp" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="dtK-jx-USs"/>
                             <constraint firstItem="ibl-1B-l2Y" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="e60-VE-lHq"/>
                             <constraint firstItem="gRK-r3-HVX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="f3h-gd-A9C"/>
-                            <constraint firstItem="Mfv-cS-KMl" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-181" id="hro-cf-awh"/>
-                            <constraint firstItem="irL-P7-xV4" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="56" id="nAc-xi-eAp"/>
+                            <constraint firstItem="M11-CR-AWD" firstAttribute="top" secondItem="irL-P7-xV4" secondAttribute="bottom" constant="70" id="gk9-xd-eV5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="ibl-1B-l2Y" secondAttribute="top" id="na0-Uq-Tfk"/>
                             <constraint firstItem="Mfv-cS-KMl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nz7-CL-FPC"/>
                             <constraint firstItem="gRK-r3-HVX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-61" id="rvu-5E-zLb"/>
