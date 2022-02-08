@@ -1,0 +1,108 @@
+# Node.js
+# Build a general Node.js project with npm.
+trigger:
+- main
+stages:
+- stage: Build
+  jobs:
+    - job: notifyBuildStarted
+      displayName: Build Started
+      pool:
+        vmImage: ubuntu-latest
+      steps:
+      - task: NodeTool@0
+        inputs:
+          versionSpec: '10.x'
+        displayName: 'Install Node.js'
+      - script: |
+          npm install
+        displayName: 'npm install'
+- stage: Deploy_to_Staging
+  jobs:
+  - job: initSplitStagingRules
+    displayName: Create Split Rules
+    steps:
+      - checkout: none
+    ## Default Split Task Goes Here ##
+      - task: SplitUpdateDefinition@4
+        inputs:
+          ServiceConnection: 'split-feature-flags'
+          WorkspaceId: 'f3be2ec0-0507-11ec-a057-42851e80ca2c'
+          EnvironmentId: 'f3cd7100-0507-11ec-a057-42851e80ca2c'
+          SplitTargetingDefinition: |
+            {
+              "treatments": [
+                {
+                  "name": "on"
+                },
+                {
+                  "name": "off"
+                }
+              ],
+              "defaultTreatment": "off",
+              "rules": [],
+              "defaultRule": [
+                {
+                  "treatment": "off",
+                  "size": 100
+                }
+              ]
+            }
+  - deployment: DeployWeb
+    displayName: Deploy Web App to Stage
+    pool:
+      vmImage: 'Ubuntu-latest'
+    environment: stage-default
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - script: echo doing stage deploy
+          # deploy steps go here
+- stage: Test_In_Prod
+  jobs:
+  - job: initSplitProductionRules
+    displayName: Create Split Rules (TiP)
+    steps:
+      - checkout: none
+    ## Split Task for Testing In Prod Goes Here ##
+      - task: SplitUpdateDefinition@4
+        inputs:
+          ServiceConnection: 'split-feature-flags'
+          WorkspaceId: 'f3be2ec0-0507-11ec-a057-42851e80ca2c'
+          EnvironmentId: 'f3c16310-0507-11ec-a057-42851e80ca2c'
+          SplitTargetingDefinition: |
+            {
+              "treatments": [
+                {
+                  "name": "on",
+                  "segments":[
+                    "beta_users"
+                  ]
+                },
+                {
+                  "name": "off"
+                }
+              ],
+              "defaultTreatment": "off",
+              "rules": [],
+              "defaultRule": [
+                {
+                  "treatment": "off",
+                  "size": 100
+                }
+              ]
+            }
+  - deployment: DeployWeb
+    displayName: Deploy Web App to Prod
+    pool:
+      vmImage: 'Ubuntu-latest'
+    environment: Prod-Default
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - script: echo doing prod deploy for Testing In Production
+            displayName: doing deploy
+          # deploy steps go here
+
